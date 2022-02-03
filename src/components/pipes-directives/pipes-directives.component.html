@@ -1,0 +1,65 @@
+<h3>{{ title }}</h3>
+
+<p>
+  <b>Letras minúsculas:</b>
+  {{ exampleText | lowercase }}
+</p>
+
+<p>
+  <b>Letras maiúsculas:</b>
+  {{ exampleText | uppercase }}
+</p>
+
+<p>
+  <b>Data:</b>
+  {{ currentDate | date }}
+</p>
+
+<p>
+  <b>Data Completa:</b>
+  {{ currentDate | date:'fullDate' }}
+</p>
+
+<p>
+  <b>Data Abreviada:</b>
+  {{ currentDate | date:'shortDate' }}
+</p>
+
+<p>
+  <b>Data Customizada:</b>
+  {{ currentDate | date:'dd/MM/yy' }}
+</p>
+
+<hr />
+
+<h4>Diretivas</h4>
+
+<span appBlue><b>Usando diretiva para alterar a cor do texto</b></span>
+
+<hr />
+
+<input type="checkbox" [(ngModel)]="showText" /> Exibir texto<br /><br />
+
+<span *ngIf="showText; else showSecondText"><b>Texto exibido com diretiva *ngIf</b></span>
+
+<ng-template #showSecondText><b>Texto exibido no bloco else</b></ng-template>
+
+<hr />
+
+<b>Diretiva *ngFor</b><br /><br />
+<span *ngFor="let student of studentsList">
+  #Id: {{ student.id }} - Nome: {{ student.name }}<br>
+</span>
+
+<hr />
+
+<b>Utilizando *ngSwitch</b><br><br>
+
+Status: <input type="number" [(ngModel)]="status" min="0" max="3" />
+
+<div [ngSwitch]="status">
+  <div *ngSwitchCase="1">Em aberto</div>
+  <div *ngSwitchCase="2">Em processamento</div>
+  <div *ngSwitchCase="3">Finalizado</div>
+  <div *ngSwitchDefault>Informe o status</div>
+</div>
