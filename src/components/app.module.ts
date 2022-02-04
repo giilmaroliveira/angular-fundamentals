@@ -14,6 +14,7 @@ import { registerLocaleData } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { BlueDirective } from './directives/blue.directive';
 import { FormsComponent } from './forms/forms.component';
+import { HeaderComponent } from './header/header.component';
 
 registerLocaleData(localePt);
 
@@ -24,7 +25,8 @@ registerLocaleData(localePt);
     BindingComponent,
     PipesDirectivesComponent,
     BlueDirective,
-    FormsComponent
+    FormsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
